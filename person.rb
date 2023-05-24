@@ -3,7 +3,6 @@ class Person
   attr_reader :id
 
   def initializename(age, name = 'Unknown', parent_permission: true)
-    super()
     @id = Random.rand(1..10_000)
     @age = age
     @name = name
