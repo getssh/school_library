@@ -4,27 +4,28 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [ruby\_morse\_code](#ruby_morse_code)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 school library ](#-school-library-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 ruby_enumerable <a name="about-project"></a>
+# 📖 school library <a name="about-project"></a>
 
-**ruby_enumerable** This project creates a module inside a class that implement a subset of the functionality of Enumerable.
+**school_library** This project creates a parent class using ruby syntax and create more classes based on the parent class. In general, this project implement
+four of the OOP principles.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -56,7 +57,7 @@ In order to run this project you need to:
 Clone the repo into your local machine:
 
 ```bash
-git clone https://github.com/ezraermy/ruby_enumerable.git
+git clone https://github.com/getssh/school_library
 ```
 
 Install the dependencies using npm:
@@ -78,12 +79,6 @@ To run tests, run the following command:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-👤 **Ezra Yehuwalashet**
-
-- [<img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" width='20'/> Email](mailto:ezraermy@gmail.com)
-- [<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" width='20'/> Twitter](https://twitter.com/ezraermy)
-- [<img src="https://i.stack.imgur.com/gVE0j.png" width='20'/> LinkedIn](https://www.linkedin.com/in/ezra-yehuwalashet/)
 
 👨‍💻 **Getayawkal Tamrat**
 
