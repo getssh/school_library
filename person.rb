@@ -37,3 +37,17 @@ class PersonDecorator < Nameable
     @nameable.correct_name
   end
 end
+
+class CapitalizeDecorator < PersonDecorator
+  def correct_name
+    capName = @nameable.correct_name
+    capName.capitalize
+  end
+end
+
+class TrimmerDecorator < PersonDecorator
+  def correct_name
+    str = @nameable.correct_name
+    str.slice(0, 10)
+  end
+end
