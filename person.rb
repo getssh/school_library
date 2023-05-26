@@ -1,4 +1,4 @@
-require_relative 'nameable.rb'
+require_relative 'nameable'
 
 class Person < Nameable
   attr_accessor :name, :age
@@ -41,7 +41,7 @@ end
 class CapitalizeDecorator < PersonDecorator
   def correct_name
     capName = @nameable.correct_name
-    capName.capitalize
+    capName.upcase
   end
 end
 
@@ -51,3 +51,10 @@ class TrimmerDecorator < PersonDecorator
     str.slice(0, 10)
   end
 end
+
+person = Person.new(22, 'maximilianus')
+  person.correct_name
+  capitalizedPerson = CapitalizeDecorator.new(person)
+  puts capitalizedPerson.correct_name
+  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+  puts capitalizedTrimmedPerson.correct_name
