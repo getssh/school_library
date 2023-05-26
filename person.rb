@@ -41,7 +41,7 @@ end
 class CapitalizeDecorator < PersonDecorator
   def correct_name
     capName = @nameable.correct_name
-    capName.upcase
+    capName.capitalize
   end
 end
 
