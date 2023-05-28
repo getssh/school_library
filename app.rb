@@ -157,3 +157,22 @@ class App
       puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
     end
   end
+
+  def display_people
+    @people.each_with_index do |person, index|
+      if person.is_a?(Student)
+        puts "#{index}) [Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      elsif person.is_a?(Teacher)
+        puts "#{index}) [Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
+  end
+
+  def valid_book_index?(index)
+    index.between?(0, @books.length - 1)
+  end
+
+  def valid_person_index?(index)
+    index.between?(0, @people.length - 1)
+  end
+end
