@@ -13,35 +13,31 @@ class App
   def run
     puts 'Welcome to School Library App!'
     loop do
-      puts 'Please choose an option by entering a number:'
-      puts '1 - List all books'
-      puts '2 - List all people'
-      puts '3 - Create a person'
-      puts '4 - Create a book'
-      puts '5 - Create a rental'
-      puts '6 - List all rentals for a given person ID'
-      puts '7 - Exit'
-
+      display_menu
       option = gets.chomp.to_i
       case option
-      when 1
-        list_all_books
-      when 2
-        list_all_people
-      when 3
-        create_person
-      when 4
-        create_book
-      when 5
-        create_rental
-      when 6
-        list_rentals_for_person
-      when 7
-        exit_app
+      when 1 then list_all_books
+      when 2 then list_all_people
+      when 3 then create_person
+      when 4 then create_book
+      when 5 then create_rental
+      when 6 then list_rentals_for_person
+      when 7 then exit_app
       else
         puts 'Invalid option. Please choose a valid option.'
       end
     end
+  end
+
+  def display_menu
+    puts 'Please choose an option by entering a number:'
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rentals for a given person ID'
+    puts '7 - Exit'
   end
 
   private
