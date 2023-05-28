@@ -92,3 +92,18 @@ class App
     @people << student
     puts 'Person created successfully'
   end
+
+  def create_teacher
+    puts 'Age:'
+    age = gets.chomp.to_i
+
+    puts 'Name:'
+    name = gets.chomp
+
+    puts 'Specialization:'
+    specialization = gets.chomp
+
+    teacher = Teacher.new(age, specialization, name)
+    @people << teacher
+    puts 'Person created successfully'
+  end
