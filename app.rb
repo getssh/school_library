@@ -4,6 +4,16 @@ require_relative 'teacher'
 require_relative 'rental'
 
 class App
+  MENU_OPTIONS = {
+    1 => :list_all_books,
+    2 => :list_all_people,
+    3 => :create_person,
+    4 => :create_book,
+    5 => :create_rental,
+    6 => :list_rentals_for_person,
+    7 => :exit_app
+  }.freeze
+
   def initialize
     @books = []
     @people = []
@@ -15,17 +25,17 @@ class App
     loop do
       display_menu
       option = gets.chomp.to_i
-      case option
-      when 1 then list_all_books
-      when 2 then list_all_people
-      when 3 then create_person
-      when 4 then create_book
-      when 5 then create_rental
-      when 6 then list_rentals_for_person
-      when 7 then exit_app
-      else
-        puts 'Invalid option. Please choose a valid option.'
-      end
+      handle_option(option)
+    end
+  end
+
+  private
+
+  def handle_option(option)
+    if MENU_OPTIONS.key?(option)
+      send(MENU_OPTIONS[option])
+    else
+      puts 'Invalid option. Please choose a valid option.'
     end
   end
 
@@ -39,8 +49,6 @@ class App
     puts '6 - List all rentals for a given person ID'
     puts '7 - Exit'
   end
-
-  private
 
   def list_all_books
     puts 'Books:'
@@ -57,6 +65,17 @@ class App
         puts "[Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       when Teacher
         puts "[Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
+  end
+
+  def display_people
+    @people.each_with_index do |person, index|
+      case person
+      when Student
+        puts "#{index}) [Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      when Teacher
+        puts "#{index}) [Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
   end
@@ -164,17 +183,6 @@ class App
   def display_books
     @books.each_with_index do |book, index|
       puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
-    end
-  end
-
-  def display_people
-    @people.each_with_index do |person, index|
-      case person
-      when Student
-        puts "#{index}) [Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-      when Teacher
-        puts "#{index}) [Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-      end
     end
   end
 
