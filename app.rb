@@ -107,3 +107,26 @@ class App
     @people << teacher
     puts 'Person created successfully'
   end
+
+  def create_rental
+    puts 'Select a book from the following list by number:'
+    display_books
+
+    book_index = gets.chomp.to_i
+    return puts 'Invalid book selection.' unless valid_book_index?(book_index)
+
+    puts 'Select a person from the following list by number:'
+    display_people
+
+    person_index = gets.chomp.to_i
+    return puts 'Invalid person selection.' unless valid_person_index?(person_index)
+
+    puts 'Date:'
+    date = gets.chomp
+
+    book = @books[book_index]
+    person = @people[person_index]
+    rental = Rental.new(date, book, person)
+    @rentals << rental
+    puts 'Rental created successfully'
+  end
