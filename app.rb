@@ -43,3 +43,23 @@ class App
       end
     end
   end
+
+  private
+
+  def list_all_books
+    puts 'Books:'
+    @books.each do |book|
+      puts "Title: #{book.title}, Author: #{book.author}"
+    end
+  end
+
+  def list_all_people
+    puts 'People:'
+    @people.each do |person|
+      if person.is_a?(Student)
+        puts "[Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      elsif person.is_a?(Teacher)
+        puts "[Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
+  end
