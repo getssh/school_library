@@ -56,9 +56,10 @@ class App
   def list_all_people
     puts 'People:'
     @people.each do |person|
-      if person.is_a?(Student)
+      case person
+      when Student
         puts "[Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-      elsif person.is_a?(Teacher)
+      when Teacher
         puts "[Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
@@ -91,7 +92,7 @@ class App
     student = Student.new(age, name, parent_permission: parent_permission)
     @people << student
     puts 'Person created successfully'
-  end 
+  end
 
   def create_teacher
     puts 'Age:'
@@ -172,9 +173,10 @@ class App
 
   def display_people
     @people.each_with_index do |person, index|
-      if person.is_a?(Student)
+      case person
+      when Student
         puts "#{index}) [Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-      elsif person.is_a?(Teacher)
+      when Teacher
         puts "#{index}) [Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
