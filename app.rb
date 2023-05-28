@@ -91,7 +91,7 @@ class App
     student = Student.new(age, name, parent_permission: parent_permission)
     @people << student
     puts 'Person created successfully'
-  end
+  end 
 
   def create_teacher
     puts 'Age:'
@@ -106,6 +106,18 @@ class App
     teacher = Teacher.new(age, specialization, name)
     @people << teacher
     puts 'Person created successfully'
+  end
+
+  def create_book
+    puts 'Title:'
+    title = gets.chomp
+
+    puts 'Author:'
+    author = gets.chomp
+
+    book = Book.new(title, author)
+    @books << book
+    puts 'Book created successfully'
   end
 
   def create_rental
